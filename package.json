@@ -1,0 +1,28 @@
+{
+  "name": "dialonce-sdk-node",
+  "description": "A Dialonce helper library",
+  "version": "1.0.0",
+  "author": "Yacine Khatal <khatal.yacine@gmail.com>",
+  "contributors": [
+    {
+      "name": "dialonce-sdk-node contributors",
+      "url": "https://github.com/dial-once/dialonce-sdk-node/graphs/contributors"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dial-once/dialonce-sdk-node.git"
+  },
+  "dependencies": {
+    "request": "^2.72.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": ""
+  },
+  "main": "./lib",
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "license": "MIT"
+}
