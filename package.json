@@ -1,6 +1,10 @@
 {
   "name": "dialonce-sdk-node",
   "description": "A Dialonce helper library",
+  "keywords": [
+    "dialonce",
+    "dialonce client"
+  ],
   "version": "1.0.0",
   "author": "Yacine Khatal <khatal.yacine@gmail.com>",
   "contributors": [
@@ -16,13 +20,21 @@
   "dependencies": {
     "request": "^2.72.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "istanbul": "^0.4.4",
+    "jsdoc": "^3.4.0",
+    "jshint": "^2.9.2",
+    "minami": "^1.1.1",
+    "mocha": "^2.5.3"
+  },
   "scripts": {
-    "test": ""
+    "test": "node_modules/jshint/bin/jshint . && node_modules/mocha/bin/mocha --recursive test --timeout=10000",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- test --recursive --timeout=10000",
+    "doc": "node_modules/jsdoc/jsdoc.js -d ./docs --readme README.md --package package.json --template node_modules/minami lib/*"
   },
   "main": "./lib",
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.12.0"
   },
   "license": "MIT"
 }
