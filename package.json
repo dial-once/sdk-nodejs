@@ -21,7 +21,7 @@
     "request": "^2.72.0"
   },
   "devDependencies": {
-    "istanbul": "^0.4.4",
+    "istanbul": "^0.4.5",
     "jsdoc": "^3.4.0",
     "jshint": "^2.9.2",
     "minami": "^1.1.1",
