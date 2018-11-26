@@ -1,4 +1,7 @@
+const Application = require('./lib/Application');
+const Ivr = require('./lib/Ivr');
+
 module.exports = {
-	Application: require('./lib/Application'),
-	Ivr: require('./lib/Ivr')
+  Application,
+  Ivr
 };
