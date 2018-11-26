@@ -5,7 +5,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/service-sms-campaign
+    working_directory: ~/sdk-nodejs
     docker:
       - image: circleci/node:8.9
       # Specify service dependencies here if necessary
@@ -31,23 +31,18 @@ jobs:
           paths:
           - node_modules
           key: v1-dependencies-{{ .Branch }}-{{ checksum "package.json" }}
-
-      #Initialize the project and run tests
-      - run:
-          name: Initialize
-          command: make init
       - run:
           name: Test project
           command: make test
 
       # Special step used to persist a temporary file to be used by another job in the workflow
       - persist_to_workspace:
-          root: ~/service-sms-campaign
+          root: ~/sdk-nodejs
           paths:
             - coverage
 
   sonarqube:
-    working_directory: ~/service-sms-campaign
+    working_directory: ~/sdk-nodejs
     docker:
         # Sonarqube need OpenJDK 8 to run his analysis correctly
         - image: circleci/openjdk:8-jdk
@@ -56,7 +51,7 @@ jobs:
       # Special step used to attach the workflow’s workspace to the current container
       # Retrieve coverage's folder for sonarqube
       - attach_workspace:
-          at: ~/service-sms-campaign
+          at: ~/sdk-nodejs
 
       # Sonarqube need to have node installed to run his analysis
       - run:
